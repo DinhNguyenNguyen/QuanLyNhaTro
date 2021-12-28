@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace QuanLyNhaTro.DTO
 {
-    public class ThietBiDTO
+    public class TrangBiDTO
     {
         private string maTB;
-        private string tenTB;
+        private string maPhong;
 
         public string MaTB { get => maTB; set => maTB = value; }
-        public string TenTB { get => tenTB; set => tenTB = value; }
+        public string MaPhong { get => maPhong; set => maPhong = value; }
     }
 }
