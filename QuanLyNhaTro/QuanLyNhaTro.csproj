@@ -57,6 +57,12 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="DAO\DangNhapDAO.cs" />
+    <Compile Include="DAO\DichVuDAO.cs" />
+    <Compile Include="DAO\KhachHangDAO.cs" />
+    <Compile Include="DAO\PhongTroDAO.cs" />
+    <Compile Include="DAO\SuDungDVADAO.cs" />
+    <Compile Include="DAO\ThietBiDAO.cs" />
+    <Compile Include="DAO\TrangBiDAO.cs" />
     <Compile Include="DTO\DichVuDTO.cs" />
     <Compile Include="DTO\HoaDonDTO.cs" />
     <Compile Include="DTO\KhachHangDTO.cs" />
@@ -66,6 +72,7 @@
     <Compile Include="DTO\SuDungDVDTO.cs" />
     <Compile Include="DTO\ThietBiDTO.cs" />
     <Compile Include="DTO\TrangBiDTO.cs" />
+    <Compile Include="Error.cs" />
     <Compile Include="GUI\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -16,6 +16,7 @@ namespace QuanLyNhaTro.GUI
         public frmDangNhap()
         {
             InitializeComponent();
+           
         }
     }
 }
