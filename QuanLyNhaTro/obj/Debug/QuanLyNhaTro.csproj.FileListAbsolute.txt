@@ -49,7 +49,6 @@ E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.GUI.frmDangNhap.resou
 E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.frmMain.resources
 E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.Properties.Resources.resources
 E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.csproj.GenerateResource.cache
-E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.exe.licenses
 E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.csproj.CoreCompileInputs.cache
 E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.csproj.CopyComplete
 E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.exe
@@ -99,3 +98,4 @@ E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\bin\Debug\ja\DevExpress.Office.v19.2.Core.re
 E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
 E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.GUI.frmDichVu.resources
 E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.GUI.frmKhachHang.resources
+E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.GUI.frmPhongTro.resources
