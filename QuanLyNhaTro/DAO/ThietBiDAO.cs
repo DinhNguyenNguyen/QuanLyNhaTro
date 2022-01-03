@@ -18,7 +18,7 @@ namespace QuanLyNhaTro.DAO
 
         public static bool ThemTB(ThietBiDTO tb)
         {
-            string query = string.Format("insert into thietbi values('{0}',N'{1}')", tb.MaTB, tb.TenTB);
+            string query = string.Format("insert into thietbi values('{0}',N'{1}',N'{2}',{3})", tb.MaTB, tb.TenTB, tb.DVTinh, tb.Gia);
             if (Connection.exeData(query))
             {
                 Error.Show("Thêm thiết bị thành công");
@@ -33,7 +33,7 @@ namespace QuanLyNhaTro.DAO
 
         public static bool CapNhatTB(ThietBiDTO tb)
         {
-            string query = string.Format("update thietbi set tebtb=N'{0}'where matb= '{1}')",  tb.TenTB, tb.MaTB);
+            string query = string.Format("update thietbi set tebtb=N'{0}, dvtinh= N'{2}', gia= {3} where matb= '{1}')",  tb.TenTB, tb.MaTB, tb.DVTinh,tb.Gia);
             if (Connection.exeData(query))
             {
                 Error.Show("Cập nhật thiết bị thành công");

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,5 +36,42 @@ namespace QuanLyNhaTro
             }
             return checkName;
         }
+
+        public static void KeyPressNumber(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+            
+            if (e.KeyChar == (char)Keys.Delete)
+            {
+
+            }
+        }
+
+        public static void KeyPressDel(object sender, KeyPressEventArgs e, Button btn)
+        {
+            if (e.KeyChar == (char)Keys.Delete)
+            {
+                btn.PerformClick();
+            }
+        }
+
+        public static void TextBoxNull(TextEdit txt, string name)
+        {
+            if (txt.EditValue == null || txt.ToString().Equals(""))
+            {
+                Error.Show("Tên "+name+" không được bỏ trống");
+                txt.Focus();
+                return;
+            }
+        }
+
+        public static byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            return ms.ToArray();
+        }
+
     }
 }

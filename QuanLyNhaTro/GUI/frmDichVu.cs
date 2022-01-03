@@ -16,7 +16,9 @@ namespace QuanLyNhaTro.GUI
         }
 
         DichVuDTO dv = new DichVuDTO();
+        ThietBiDTO tb = new ThietBiDTO();
         string sqlDV = "select * from dichvu";
+        string sqlTB = "select * from thietbi";
 
         private void loadDV()
         {
@@ -188,6 +190,7 @@ namespace QuanLyNhaTro.GUI
         }
         #endregion
 
+
         private void BatLoiTB()
         {
             if (txtTenTB.EditValue == null || txtTenTB.EditValue.ToString().Equals(""))
@@ -208,7 +211,7 @@ namespace QuanLyNhaTro.GUI
                 txtGiaTB.Focus();
                 return;
             }
-            if (Error.checkName(sqlDV, txtTenTB, "TenTB"))
+            if (Error.checkName(sqlTB, txtTenTB, "TenTB"))
             {
                 XtraMessageBox.Show("Tên thiết bị '" + txtTenTB.EditValue.ToString() + "' đã tồn tại!\nVui lòng chọn tên khác!", "Thông báo!");
                 btnLamMoi.PerformClick();
@@ -216,5 +219,84 @@ namespace QuanLyNhaTro.GUI
             }
         }
 
+        private void btnThemTB_Click(object sender, EventArgs e)
+        {         
+            try
+            {
+                BatLoiTB();
+                tb.MaTB = Connection.creatId("TB", sqlTB);
+                tb.TenTB = txtTenTB.EditValue.ToString();
+                tb.DVTinh = txtDVTTB.EditValue.ToString();
+                tb.Gia = Int32.Parse(txtGiaTB.EditValue.ToString());
+                if (tb.Gia / 1000 < 1)
+                {
+                    Error.Show("Giá không được nhỏ hơn 1000");
+                    txtGia.Focus();
+                    return;
+                }
+                else
+                {
+                    ThietBiDAO.ThemTB(tb);
+                    loadTB();
+                }
+            }
+            catch(Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSuaTB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tb.MaTB = txtMaTB.EditValue.ToString();
+                tb.TenTB = txtTenTB.EditValue.ToString();
+                tb.DVTinh = txtDVTTB.EditValue.ToString();
+                tb.Gia = Int32.Parse(txtGiaTB.EditValue.ToString());
+                ThietBiDAO.CapNhatTB(tb);
+                loadTB();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnXoaTB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tb.MaTB = txtMaTB.EditValue.ToString();
+                ThietBiDAO.XoaTB(tb);
+                loadTB();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnLamMoiTB_Click(object sender, EventArgs e)
+        {
+            txtMaTB.Text = "";
+            txtTenTB.Text = "";
+            txtGiaTB.Text = "";
+            txtDVTTB.Text = "";
+            txtTenTB.Focus();
+        }
+
+        private void gvThietBi_RowClick(object sender, RowClickEventArgs e)
+        {
+            txtMaTB.EditValue = gvThietBi.GetRowCellValue(e.RowHandle, "MaTB").ToString();
+            txtTenTB.EditValue = gvThietBi.GetRowCellValue(e.RowHandle, "TenTB").ToString();
+            txtDVTTB.EditValue = gvThietBi.GetRowCellValue(e.RowHandle, "DVTinh");
+            txtGiaTB.Text = gvThietBi.GetRowCellValue(e.RowHandle, "Gia").ToString();
+        }
+
+        private void txtGiaTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Error.KeyPressNumber(sender, e);
+        }
     }
 }

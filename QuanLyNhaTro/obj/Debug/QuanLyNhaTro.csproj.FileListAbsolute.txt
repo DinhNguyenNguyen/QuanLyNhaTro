@@ -99,3 +99,4 @@ E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\bin\Debug\ru\DevExpress.Office.v19.2.Core.re
 E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.GUI.frmDichVu.resources
 E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.GUI.frmKhachHang.resources
 E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.GUI.frmPhongTro.resources
+E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\obj\Debug\QuanLyNhaTro.exe.licenses

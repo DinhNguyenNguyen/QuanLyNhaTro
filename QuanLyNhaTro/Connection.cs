@@ -7,7 +7,9 @@ namespace QuanLyNhaTro
 {
     class Connection
     {
-        public static SqlConnection con = new SqlConnection (@"Data Source=.\sqlexpress;Initial Catalog=QLNT;Integrated Security=True");
+        //public static SqlConnection con = new SqlConnection (@"Data Source=26.95.210.239\sqlexpress;Initial Catalog=QLNT;Integrated Security=True");
+
+        public static SqlConnection con = new SqlConnection(@"Data Source=26.95.210.239; Initial Catalog = QLNT; Persist Security Info=True;User ID = monkey; Password=monkey");
         public static void openConnect()
         {
             if(con.State == ConnectionState.Closed)

@@ -138,6 +138,15 @@
             // 
             // gvDichVu
             // 
+            this.gvDichVu.Appearance.EvenRow.BackColor = System.Drawing.Color.White;
+            this.gvDichVu.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvDichVu.Appearance.Row.BackColor = System.Drawing.Color.White;
+            this.gvDichVu.Appearance.Row.BackColor2 = System.Drawing.Color.White;
+            this.gvDichVu.Appearance.Row.BorderColor = System.Drawing.Color.White;
+            this.gvDichVu.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.gvDichVu.Appearance.Row.Options.UseBackColor = true;
+            this.gvDichVu.Appearance.Row.Options.UseBorderColor = true;
+            this.gvDichVu.Appearance.Row.Options.UseForeColor = true;
             this.gvDichVu.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
@@ -238,9 +247,12 @@
             this.gridColumn8});
             this.gvThietBi.GridControl = this.gcThietBi;
             this.gvThietBi.Name = "gvThietBi";
+            this.gvThietBi.OptionsBehavior.Editable = false;
+            this.gvThietBi.OptionsBehavior.ReadOnly = true;
             this.gvThietBi.OptionsFind.AlwaysVisible = true;
             this.gvThietBi.OptionsFind.Behavior = DevExpress.XtraEditors.FindPanelBehavior.Filter;
             this.gvThietBi.OptionsView.ShowGroupPanel = false;
+            this.gvThietBi.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvThietBi_RowClick);
             // 
             // gridColumn5
             // 
@@ -308,9 +320,12 @@
             // 
             this.txtGiaTB.Location = new System.Drawing.Point(369, 46);
             this.txtGiaTB.Name = "txtGiaTB";
+            this.txtGiaTB.Properties.DisplayFormat.FormatString = "#,### VNĐ";
+            this.txtGiaTB.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtGiaTB.Size = new System.Drawing.Size(154, 30);
             this.txtGiaTB.StyleController = this.layoutControl2;
             this.txtGiaTB.TabIndex = 18;
+            this.txtGiaTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaTB_KeyPress);
             // 
             // txtTenTB
             // 
@@ -329,6 +344,7 @@
             this.btnThemTB.StyleController = this.layoutControl2;
             this.btnThemTB.TabIndex = 13;
             this.btnThemTB.Text = "Thêm";
+            this.btnThemTB.Click += new System.EventHandler(this.btnThemTB_Click);
             // 
             // btnLamMoiTB
             // 
@@ -339,6 +355,7 @@
             this.btnLamMoiTB.StyleController = this.layoutControl2;
             this.btnLamMoiTB.TabIndex = 16;
             this.btnLamMoiTB.Text = "Làm mới";
+            this.btnLamMoiTB.Click += new System.EventHandler(this.btnLamMoiTB_Click);
             // 
             // btnXoaTB
             // 
@@ -349,6 +366,7 @@
             this.btnXoaTB.StyleController = this.layoutControl2;
             this.btnXoaTB.TabIndex = 15;
             this.btnXoaTB.Text = "Xóa";
+            this.btnXoaTB.Click += new System.EventHandler(this.btnXoaTB_Click);
             // 
             // btnSuaTB
             // 
@@ -359,6 +377,7 @@
             this.btnSuaTB.StyleController = this.layoutControl2;
             this.btnSuaTB.TabIndex = 14;
             this.btnSuaTB.Text = "Sửa";
+            this.btnSuaTB.Click += new System.EventHandler(this.btnSuaTB_Click);
             // 
             // txtDVTTB
             // 
