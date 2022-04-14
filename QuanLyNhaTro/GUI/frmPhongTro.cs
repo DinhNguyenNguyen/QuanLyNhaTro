@@ -29,14 +29,19 @@ namespace QuanLyNhaTro.GUI
            
             dt.Columns.Add("URL", typeof(byte[]));
             gcPhong.DataSource = dt;
-            foreach (DataRow dr in dt.Rows)
-            {
-                dr["Anh"] = string.Format(@"~\Image\ImageRoom\{1}", Application.StartupPath, dr["Anh"]);
-                Image img = Image.FromFile(dr["Anh"].ToString());
-                dr["URL"] = Error.ImageToByteArray(img);
-                dt.AcceptChanges();
-                dr.SetModified();
-            }
+            //foreach (DataRow dr in dt.Rows)
+            //{
+            //    //E:\GitHub\QuanLyNhaTro\QuanLyNhaTro\Image\ImageRoom\PT00000001.jpg
+            //    //dr["URL"] = string.Format(@"{0}\SRC\Img\{1}", Application.StartupPath, dr["URL"]);
+            //    //dr["Anh"] = string.Format(@"~.\Image\ImageRoom\{0}", dr["Anh"]);
+            //    dr["Anh"] = string.Format(@"{0}\Image\ImageRoom\{1}", Application.StartupPath, dr["Anh"]);
+
+            //    Image img = Image.FromFile(dr["Anh"].ToString());
+            //    dr["URL"] = Error.ImageToByteArray(img);
+            //    dt.AcceptChanges();
+            //    dr.SetModified();
+            //}
+           
         }
 
         private void BatLoi()
